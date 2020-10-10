@@ -1,0 +1,31 @@
+/* Darkmode overrides */
+.darkmode--activated p,
+.darkmode--activated li,
+.darkmode--activated i,
+.darkmode--activated h1,
+.darkmode--activated .navbar-brand,
+.darkmode--activated .navbar-toggler,
+.darkmode--activated h5,
+.darkmode--activated .nav-link,
+.darkmode--activated .profile-link
+
+{
+    color: white !important;
+}
+.darkmode--activated .card {
+    background-color: black;
+    border: 1px solid whitesmoke;
+}
+
+
+.button {
+    isolation: isolate;
+}
+
+.darkmode--activated .logo {
+    mix-blend-mode: difference;
+}
+
+.darkmode-toggle {
+    z-index: 999;
+}
