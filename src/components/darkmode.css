@@ -1,17 +1,27 @@
 /* Darkmode overrides */
-.darkmode--activated p,
+
 .darkmode--activated li,
 .darkmode--activated i,
 .darkmode--activated h1,
+.darkmode--activated h5,
+.darkmode--activated small,
+.darkmode--activated em,
 .darkmode--activated .navbar-brand,
 .darkmode--activated .navbar-toggler,
-.darkmode--activated h5,
 .darkmode--activated .nav-link,
-.darkmode--activated .profile-link
+.darkmode--activated .profile-link,
+.darkmode--activated .view,
+.darkmode--activated .lead,
+.darkmode--activated .card-text
+
 
 {
     color: white !important;
 }
+.darkmode--activated .post-card-title {
+    color: black !important;
+}
+
 .darkmode--activated .card {
     background-color: black;
     border: 1px solid whitesmoke;
