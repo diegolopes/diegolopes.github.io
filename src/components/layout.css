@@ -49,14 +49,14 @@ ul li{
 }
 
 .img-post{
-  height:290px;
+  height:290px !important;
 }
 
 
 
 .card-img-top img{
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 
@@ -110,3 +110,4 @@ ul li{
   .techs i {
     margin:5px;
   }
+

@@ -1,28 +1,50 @@
 import React from "react"
 import { Link } from "gatsby"
-import PostList from '../components/postlist'
-
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Header from "../components/header";
 
-const IndexPage = ({
-  data: {
-    allMarkdownRemark: { edges },
-  },
-}) => {
-  const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostList key={edge.node.id} post={edge.node} />)
+import Header from "../components/header";
+import Img from 'gatsby-image';
+
+const IndexPage = ({data}) => {
+
+    const postlist = data.allMarkdownRemark.edges;
+    console.log(postlist)
+
   return (
     <>
      <Layout >
        <Header />
-       <div>{Posts}</div>
+
+       <div className="post-list container">
+
+<ul class="post-list">
+    <div class="row">
+        {postlist.map(post => (
+          <div class="col-md-6 mb-4">
+          <div class="card">
+          <Img
+              className="card-img-top img-post"
+              fluid={post.node.frontmatter.featuredImage.childImageSharp.fluid}
+
+              />
+              <div class="card-img-overlay post-img-overlay">
+                  <strong class="d-inline-block mb-2 text-success">#{post.node.frontmatter.tag}</strong>
+                  <h5 class="mb-0">{post.node.frontmatter.title}</h5> 
+                  <small class="mb-1 text-muted">{post.date}</small>
+                  <div class="post-text"> {post.node.excerpt} </div>
+                  <Link className="stretched-link" to={post.node.frontmatter.slug}>Continue lendo...</Link>
+              </div>
+            </div>
+          </div>
+        ))}
+        </div>
+        </ul>
+      </div>
+ 
      </Layout>
     </>
   )
-}
+} 
 export default IndexPage;
 
 export const pageQuery = graphql`
@@ -36,7 +58,14 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
-            
+            tag
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
