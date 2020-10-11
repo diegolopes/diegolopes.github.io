@@ -1,6 +1,6 @@
 ---
 slug: "/blog/como-foi-migrar-jekyll-para-gatsby"
-date: "2019-10-07"
+date: "2020-10-07"
 title: "Como foi migrar de Jekyll para Gatsby"
 tag: "desenvolvimento"
 featuredImage: ../images/code.jpg
@@ -11,5 +11,7 @@ site para cada atualização no repositório. Jekyll é feito com Ruby, na époc
 meu ambiente de desenvolvimento para aprender os básicos dessa linguagem que era nova para mim,
 e foi muito boa a experiência. Consegui rapidamente criar o portfólio e vi os pontos positivos 
 da linguagem Ruby (por mais que eu gostasse de JavaScript) e mantive ele no ar por quase 2 anos.
+
+![Código e tal](../images/code.jpg)
 
 
