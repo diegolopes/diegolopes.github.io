@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import CustomNavbar from "../components/navbar"
 import Layout from "../components/layout"
+import '../components/darkmode.css'
 
 
 export default function Template({
@@ -16,16 +17,29 @@ export default function Template({
   return (
     <div>
       <Layout>
-      <div className="container blog-post">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
+      <div className="container blog-post mt-3">
+      <header>
+      <div className="row">
+          <div className="col-md-7">
+              <small>{ frontmatter.date }</small>
+              <h1> { frontmatter.title }</h1>
+              <p className="view">autor: Diego Lopes</p> 
+              <small>tags: <em>{ frontmatter.tag }</em></small>
+          </div>
+          <div className="col-md-5">
+          <Img fluid={ featuredImgFluid } /> 
+
+          </div>
+
+      </div>
+      </header>
+      <hr/>
         <div
           className="blog-post-content" 
           dangerouslySetInnerHTML={{ __html: html }}
         />
-        <Img fluid={featuredImgFluid} />
       </div>
-      </Layout>
+      </Layout>   
     </div>
   )  
 }
@@ -38,9 +52,10 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         title
+        tag
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 800) {
+            fluid( quality: 100 ) {
               ...GatsbyImageSharpFluid
             }
           }
