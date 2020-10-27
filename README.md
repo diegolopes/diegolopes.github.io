@@ -8,7 +8,7 @@
   Portfólio - Diego Lopes
 </h1>
 <p align="center">
-  <a href="https://reactjs.org"><img src="https://img.shields.io/badge/React.js-v16.13.0-blue?style=for-the-badge&logo=react"></a>
+  <a href="https://reactjs.org"><img src="https://img.shields.io/badge/React.js-v16.12.0-blue?style=for-the-badge&logo=react"></a>
   <a href="https://gatsby.com">
       <img src="https://img.shields.io/badge/Gatsby-V2-purple?style=for-the-badge&logo=gatsby">
   </a>
